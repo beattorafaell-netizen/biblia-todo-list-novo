@@ -1,0 +1,229 @@
+@import url(divTopico.css);
+@import url(topicos.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-principal--: #0f0f13;
+    --cor-secundaria--: #4ade80;
+
+    --sidebar-bg: #0f0f13;
+    --sidebar-border: rgba(255, 255, 255, 0.06);
+    --principal-bg: #16161d;
+    --accent: #4ade80;
+    --accent-dim: rgba(74, 222, 128, 0.12);
+    --accent-hover: rgba(74, 222, 128, 0.2);
+    --text-primary: #f0f0f0;
+    --text-muted: #8b8b9e;
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --input-border: rgba(255, 255, 255, 0.1);
+    --input-focus: rgba(74, 222, 128, 0.4);
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--principal-bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+}
+
+main {
+    display: flex;
+    gap: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidBar {
+    background-color: var(--sidebar-bg);
+    color: var(--cor-secundaria--);
+    width: 260px;
+    min-width: 260px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+    border-right: 1px solid var(--sidebar-border);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(74, 222, 128, 0.2) transparent;
+}
+
+.sidBar::-webkit-scrollbar { width: 4px; }
+.sidBar::-webkit-scrollbar-thumb {
+    background-color: rgba(74, 222, 128, 0.2);
+    border-radius: 2px;
+}
+
+.principal {
+    flex: 1;
+    height: 100vh;
+    background-color: var(--principal-bg);
+    overflow-y: auto;
+    padding: 40px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.principal::-webkit-scrollbar { width: 6px; }
+.principal::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.conteudo {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: var(--shadow);
+}
+
+.conteudo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding-bottom: 16px;
+}
+
+.conteudo h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--accent);
+}
+
+.conteudo label.addTitulo {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.conteudo input.addTitulo {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 400px;
+}
+
+.conteudo input.addTitulo:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+}
+
+.conteudo button {
+    background: var(--accent-dim);
+    color: var(--accent);
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    width: fit-content;
+}
+
+.conteudo button:hover {
+    background: var(--accent-hover);
+    border-color: rgba(74, 222, 128, 0.5);
+    transform: translateY(-1px);
+}
+
+.conteudo button:active { transform: translateY(0); }
+
+.conteudo div > label.itemListaBusca {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.conteudo div > input.itemListaBusca {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 9px 12px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    margin-right: 8px;
+}
+
+.conteudo div > input.itemListaBusca:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+}
+
+.conteudo input.itemLista[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.conteudo span {
+    color: var(--text-primary);
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+.conteudo textarea {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+    padding: 14px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 120px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.conteudo textarea:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+}
+
+.conteudo p {
+    color: var(--text-primary);
+    font-size: 15px;
+    line-height: 1.7;
+    background: var(--input-bg);
+    border-radius: 8px;
+    padding: 14px;
+}
