@@ -3,21 +3,30 @@ import conteudoTextearea from "./criarAbaTextearea.js"
 
 
 function criarConteudo(inputTopico){
+
+    const tituloInfos = document.createElement('div')
+    tituloInfos.classList.add('tituloInfos')
+
+
     const h1 = document.createElement('h1')
     h1.textContent = inputTopico
+
+
     const conteudo = document.createElement('div')
     conteudo.classList.add('conteudo')
+
 
     const labelTitulo = document.createElement('label')
     labelTitulo.textContent = "Digite o titulo aqui"
     labelTitulo.classList.add('addTitulo')
+
 
     const inputTitulo = document.createElement('input')
     inputTitulo.classList.add('addTitulo')
 
 
     const btnTitulo = document.createElement('button')
-    btnTitulo.innerHTML = 'asd'
+    btnTitulo.innerHTML = 'Enviar'
 
     btnTitulo.addEventListener('click', () => {
         const titulo = document.createElement('h2')
@@ -28,6 +37,10 @@ function criarConteudo(inputTopico){
         inputTitulo.style.display = 'none'
     })
 
+    const divTexteareaLista = document.createElement('div')
+    divTexteareaLista.classList.add('ladoAlado')    
+
+
     const btnLista = document.createElement('button')
     btnLista.innerHTML = "Listas"
 
@@ -35,11 +48,6 @@ function criarConteudo(inputTopico){
         conteudo.append(criarLista())
     })
 
-    
-
-
-
-    
 
     const btnTextearea = document.createElement('button')
     btnTextearea.innerHTML = "Textearea"
@@ -49,18 +57,20 @@ function criarConteudo(inputTopico){
     })
 
 
-
-
-    
-    //titulo.style.display = 'none'
-
-    conteudo.append(inputTitulo)
-    conteudo.append(labelTitulo)
-    conteudo.append(h1)
-    conteudo.append(btnLista)
-    conteudo.append(btnTextearea)
+    conteudo.append(tituloInfos)
     conteudo.append(btnTitulo)
+    conteudo.append(divTexteareaLista)
+
+
+    tituloInfos.append(h1)
+    tituloInfos.append(labelTitulo)
+    tituloInfos.append(inputTitulo)
+
     
+    divTexteareaLista.append(btnLista)
+    divTexteareaLista.append(btnTextearea)
+
+
     return conteudo
 }
 

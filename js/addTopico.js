@@ -5,33 +5,37 @@ const inputTopico = document.querySelector('.inputTopico')
 const principal = document.querySelector('.principal')
 
 function addTopico(){
-    const divTopico = document.createElement("div")
-    divTopico.classList.add('divItemBruto')
+    if (inputTopico.value.trim() !== "") {      
+        const divTopico = document.createElement("div")
+        divTopico.classList.add('divItemBruto')
 
-    const topicoItem = document.createElement('li')
-    topicoItem.classList.add('topicoItem')
-    topicoItem.innerHTML = inputTopico.value
+        const topicoItem = document.createElement('li')
+        topicoItem.classList.add('topicoItem')
+        topicoItem.innerHTML = inputTopico.value
 
-    const btnAddConteudo = document.createElement('button')
-    btnAddConteudo.textContent = "🖊"
+        const btnAddConteudo = document.createElement('button')
+        btnAddConteudo.textContent = "🖊"
 
-    const conteudo = criarConteudo(inputTopico.value)
-    conteudo.style.display = 'none'
-    principal.append(conteudo)
+        const conteudo = criarConteudo(inputTopico.value)
+        conteudo.style.display = 'none'
+        principal.append(conteudo)
+        inputTopico.value = ''
 
-    btnAddConteudo.addEventListener('click', () =>{
-        const todosConteudos = document.querySelectorAll('.conteudo')
-        todosConteudos.forEach(item => {
-            item.style.display = 'none'
+        btnAddConteudo.addEventListener('click', () =>{
+            const todosConteudos = document.querySelectorAll('.conteudo')
+            todosConteudos.forEach(item => {
+                item.style.display = 'none'
+            })
+            conteudo.style.display = 'block'
+
         })
-        conteudo.style.display = 'block'
-    })
 
-    divTopico.append(topicoItem)
-    divTopico.append(btnAddConteudo)
-    return divTopico
-
-    
+        divTopico.append(topicoItem)
+        divTopico.append(btnAddConteudo)
+        return divTopico
+        } else {
+            alert('Nao pode tipoco sem valor ')
+        } 
 }
 
 export default addTopico
