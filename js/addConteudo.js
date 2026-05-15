@@ -22,10 +22,9 @@ function criarConteudo(){
 
 
     const btnTitulo = document.createElement('button')
-    btnTitulo.innerHTML = 'Enviar'
+    btnTitulo.textContent = 'Enviar'
 
-    const titulo = document.createElement('h2')
-    
+    const titulo = document.createElement('h1')
     titulo.style.display = 'none'
 
     btnTitulo.addEventListener('click', () => {
@@ -42,7 +41,7 @@ function criarConteudo(){
 
 
     const btnLista = document.createElement('button')
-    btnLista.innerHTML = "Listas"
+    btnLista.textContent = "Listas"
 
     btnLista.addEventListener('click', () => {
         conteudo.append(criarLista())
@@ -50,7 +49,7 @@ function criarConteudo(){
 
 
     const btnTextearea = document.createElement('button')
-    btnTextearea.innerHTML = "Textearea"
+    btnTextearea.textContent = "Textearea"
 
     btnTextearea.addEventListener('click', () => {
         conteudo.append(conteudoTextearea())

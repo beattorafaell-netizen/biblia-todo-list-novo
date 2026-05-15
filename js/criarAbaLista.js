@@ -44,14 +44,14 @@ function criarLista() {
             const itemDaListaSpan = document.createElement('span')
             itemDaLista.classList.add('itemDaListaSpan')
             
-            itemDaListaSpan.innerHTML = lista.value
+            itemDaListaSpan.textContent = lista.value
 
             const btnEditarItemLista = document.createElement('button')
             btnEditarItemLista.classList.add('btnEditarItemLista')
 
             btnEditarItemLista.addEventListener('click', () => {
                 const novoItemEditado = prompt("Qual o novo nome?")
-                itemDaListaSpan.innerHTML = novoItemEditado
+                itemDaListaSpan.textContent = novoItemEditado
 
             })
         

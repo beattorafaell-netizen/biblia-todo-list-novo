@@ -7,6 +7,7 @@ const principal = document.querySelector('.principal')
 
 function addTopico(){
     if (inputTopico.value.trim() !== "") {      
+        
         const divTopico = document.createElement("div")
         divTopico.classList.add('divItemBruto')
 
@@ -45,6 +46,8 @@ function addTopico(){
             const novoNome = prompt("Novo Nome:")
             topicoItem.textContent = novoNome
         })
+
+        
 
         divTopico.append(topicoItem)
         divTopico.append(btnAddConteudo)

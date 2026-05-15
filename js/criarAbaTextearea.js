@@ -34,7 +34,7 @@ function conteudoTextearea() {
 
     const btnTesteareaAparecer = document.createElement('button')
     btnTesteareaAparecer.classList.add('btnTesteareaAparecer')
-    btnTesteareaAparecer.innerHTML = "Salvar"
+    btnTesteareaAparecer.textContent = "Salvar"
 
 
     btnTesteareaAparecer.addEventListener('click', () => {
@@ -43,7 +43,7 @@ function conteudoTextearea() {
 
 
         const pTextearea = document.createElement('p')
-        pTextearea.innerHTML = texteareaValor.value
+        pTextearea.textContent = texteareaValor.value
 
 
         divTexatearea.append(pTextearea)
