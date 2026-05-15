@@ -2,14 +2,10 @@ import criarLista from "./criarAbaLista.js"
 import conteudoTextearea from "./criarAbaTextearea.js"
 
 
-function criarConteudo(inputTopico){
+function criarConteudo(){
 
     const tituloInfos = document.createElement('div')
     tituloInfos.classList.add('tituloInfos')
-
-
-    const h1 = document.createElement('h1')
-    h1.textContent = inputTopico
 
 
     const conteudo = document.createElement('div')
@@ -28,13 +24,17 @@ function criarConteudo(inputTopico){
     const btnTitulo = document.createElement('button')
     btnTitulo.innerHTML = 'Enviar'
 
+    const titulo = document.createElement('h2')
+    
+    titulo.style.display = 'none'
+
     btnTitulo.addEventListener('click', () => {
-        const titulo = document.createElement('h2')
+        
         titulo.textContent = inputTitulo.value
-        conteudo.append(titulo)
         btnTitulo.style.display = 'none'
         labelTitulo.style.display = 'none'
         inputTitulo.style.display = 'none'
+        titulo.style.display = 'flex'
     })
 
     const divTexteareaLista = document.createElement('div')
@@ -55,20 +55,18 @@ function criarConteudo(inputTopico){
     btnTextearea.addEventListener('click', () => {
         conteudo.append(conteudoTextearea())
     })
-
-
+    conteudo.append(titulo)
     conteudo.append(tituloInfos)
     conteudo.append(btnTitulo)
-    conteudo.append(divTexteareaLista)
 
 
-    tituloInfos.append(h1)
     tituloInfos.append(labelTitulo)
     tituloInfos.append(inputTitulo)
 
     
     divTexteareaLista.append(btnLista)
     divTexteareaLista.append(btnTextearea)
+    conteudo.append(divTexteareaLista)
 
 
     return conteudo

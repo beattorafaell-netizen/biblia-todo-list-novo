@@ -10,12 +10,15 @@ function addTopico(){
         const divTopico = document.createElement("div")
         divTopico.classList.add('divItemBruto')
 
-        const topicoItem = document.createElement('li')
+        let topicoItem = document.createElement('li')
         topicoItem.classList.add('topicoItem')
-        topicoItem.innerHTML = inputTopico.value
+        topicoItem.textContent = inputTopico.value
 
         const btnAddConteudo = document.createElement('button')
         btnAddConteudo.textContent = "🖊"
+
+
+        
 
         const btnRemoveConteudo = document.createElement('button')
         btnRemoveConteudo.textContent = "X"
@@ -36,6 +39,11 @@ function addTopico(){
             })
             conteudo.style.display = 'block'
 
+        })
+
+        btnAddConteudo.addEventListener('click', () => {
+            const novoNome = prompt("Novo Nome:")
+            topicoItem.textContent = novoNome
         })
 
         divTopico.append(topicoItem)
