@@ -9,15 +9,18 @@ function conteudoTextearea() {
     labelTituloTextearea.classList.add('labelTituloTextearea')
     labelTituloTextearea.textContent = "Digite aqui seu titulo da sessão"
 
-    
-    
+
     const inputTituloTextearea = document.createElement('input')
     inputTituloTextearea.classList.add('inputTituloTextearea')
 
-    inputTituloTextearea.addEventListener('click', () => {
+    const bntAddTituloTextearea = document.createElement('button')
+    bntAddTituloTextearea.classList.add('bntAddTituloTextearea')
+
+    bntAddTituloTextearea.addEventListener('click', () => {
         tituloTextearea.textContent = inputTituloTextearea.value
         labelTituloTextearea.style.display = 'none'
-        labelTituloTextearea.style.display = 'none'
+        inputTituloTextearea.style.display = 'none'
+        bntAddTituloTextearea.style.display = 'none'
     })
 
     
@@ -49,6 +52,7 @@ function conteudoTextearea() {
 
     divTexatearea.append(labelTituloTextearea)
     divTexatearea.append(inputTituloTextearea)
+    divTexatearea.append(bntAddTituloTextearea)
     divTexatearea.append(tituloTextearea)
     divTexatearea.append(texteareaValor)
     divTexatearea.append(btnTesteareaAparecer)
