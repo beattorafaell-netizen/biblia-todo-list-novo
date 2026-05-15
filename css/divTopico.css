@@ -1,54 +1,54 @@
 .addTopicoDiv {
-    margin-top: 28px;
-    margin-bottom: 8px;
-    padding: 0 20px;
+    margin-top: 26px;
+    margin-bottom: 6px;
+    padding: 0 18px;
     width: 100%;
     text-align: center;
 }
 
 .addTopicoDiv h2 {
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(74, 222, 128, 0.5);
-    padding: 0 0 16px 0;
-    margin-bottom: 12px;
+    color: rgba(74, 222, 128, 0.4);
+    padding: 0 0 14px 0;
+    margin-bottom: 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .addTopicoDiv input {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
-    padding: 8px 12px;
-    color: #f0f0f0;
+    padding: 8px 11px;
+    color: #e4e4e4;
     font-size: 13px;
     font-family: 'Inter', sans-serif;
     outline: none;
-    width: calc(100% - 40px);
+    width: calc(100% - 44px);
     transition: border-color 0.2s, box-shadow 0.2s;
     vertical-align: middle;
 }
 
 .addTopicoDiv input:focus {
-    border-color: rgba(74, 222, 128, 0.4);
-    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.08);
+    border-color: rgba(74, 222, 128, 0.35);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.06);
 }
 
 .addTopicoDiv input::placeholder {
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.18);
 }
 
 .addTopicoDiv button {
     border-radius: 8px;
     width: 30px;
     height: 30px;
-    background-color: rgba(74, 222, 128, 0.15);
+    background-color: rgba(74, 222, 128, 0.1);
     color: rgb(74, 222, 128);
     font-size: 18px;
-    border: 1px solid rgba(74, 222, 128, 0.25);
+    border: 1px solid rgba(74, 222, 128, 0.22);
     cursor: pointer;
     vertical-align: middle;
     margin-left: 6px;
@@ -60,7 +60,7 @@
 }
 
 .addTopicoDiv button:hover {
-    background-color: rgba(74, 222, 128, 0.28);
+    background-color: rgba(74, 222, 128, 0.22);
     transform: scale(1.05);
 }
 

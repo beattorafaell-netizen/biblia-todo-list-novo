@@ -1,13 +1,21 @@
+.topicos {
+    width: 100%;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
 .divItemBruto {
     width: 100%;
-    min-height: 40px;
+    min-height: 38px;
     display: flex;
     gap: 8px;
-    padding: 6px 20px;
+    padding: 6px 14px;
     align-items: center;
     justify-content: space-between;
     border-radius: 8px;
-    margin: 2px 0;
+    margin: 1px 0;
     transition: background 0.15s;
     cursor: default;
 }
@@ -19,23 +27,24 @@
 .divItemBruto li {
     text-decoration: none;
     list-style: none;
-    font-size: 14px;
+    font-size: 13px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    color: #d4d4d4;
+    color: #c0c0c8;
     flex: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    letter-spacing: 0.01em;
 }
 
 .divItemBruto button {
     background-color: transparent;
-    color: rgba(74, 222, 128, 0.5);
+    color: rgba(74, 222, 128, 0.35);
     border: none;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
-    padding: 4px 6px;
+    padding: 4px 5px;
     border-radius: 6px;
     transition: color 0.15s, background 0.15s;
     flex-shrink: 0;
@@ -44,13 +53,5 @@
 
 .divItemBruto button:hover {
     color: rgb(74, 222, 128);
-    background: rgba(74, 222, 128, 0.1);
-}
-
-.topicos {
-    width: 100%;
-    padding: 0 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    background: rgba(74, 222, 128, 0.09);
 }

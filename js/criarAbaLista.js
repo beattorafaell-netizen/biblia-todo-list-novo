@@ -16,17 +16,31 @@ function criarLista() {
     const btnAddLista = document.createElement('button')
     btnAddLista.textContent = "Enviar"
 
-    
 
     btnAddLista.addEventListener('click', () => {
         const itemDaLista = document.createElement('input')
-        const itemDaListaSpan = document.createElement('span')
+        itemDaLista.classList.add("itemDaLista")
         itemDaLista.type = 'checkbox'
-        itemDaListaSpan.innerHTML = lista.value
+
+
+        const itemDaListaSpan = document.createElement('span')
+        itemDaLista.classList.add('itemDaListaSpan')
         
-        itemDaLista.classList.add('itemLista')
+        itemDaListaSpan.innerHTML = lista.value
+
+        const btnEditarItemLista = document.createElement('button')
+        btnEditarItemLista.classList.add('btnEditarItemLista')
+
+        btnEditarItemLista.addEventListener('click', () => {
+            const novoItemEditado = prompt("Qual o novo nome?")
+             itemDaListaSpan.innerHTML = novoItemEditado
+
+        })
+    
+
         divLista.append(itemDaLista)
         divLista.append(itemDaListaSpan)
+        divLista.append(btnEditarItemLista)
     })
 
     divLista.append(labelLista)

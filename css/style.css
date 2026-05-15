@@ -9,21 +9,27 @@
 }
 
 :root {
-    --cor-principal--: #0f0f13;
-    --cor-secundaria--: #4ade80;
+    --sidebar-bg: #000000;
+    --sidebar-border: rgba(255, 255, 255, 0.08);
+    --principal-bg: #080808;
+    --card-bg: #101010;
+    --card-border: rgba(255, 255, 255, 0.07);
 
-    --sidebar-bg: #0f0f13;
-    --sidebar-border: rgba(255, 255, 255, 0.06);
-    --principal-bg: #16161d;
     --accent: #4ade80;
-    --accent-dim: rgba(74, 222, 128, 0.12);
-    --accent-hover: rgba(74, 222, 128, 0.2);
-    --text-primary: #f0f0f0;
-    --text-muted: #8b8b9e;
-    --input-bg: rgba(255, 255, 255, 0.05);
-    --input-border: rgba(255, 255, 255, 0.1);
-    --input-focus: rgba(74, 222, 128, 0.4);
-    --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    --accent-dim: rgba(74, 222, 128, 0.09);
+    --accent-hover: rgba(74, 222, 128, 0.17);
+    --accent-border: rgba(74, 222, 128, 0.28);
+
+    --text-primary: #e4e4e4;
+    --text-muted: #555566;
+    --text-dim: #808090;
+
+    --input-bg: rgba(255, 255, 255, 0.03);
+    --input-border: rgba(255, 255, 255, 0.08);
+    --input-focus: rgba(74, 222, 128, 0.35);
+    --divider: rgba(255, 255, 255, 0.07);
+
+    --shadow: 0 4px 32px rgba(0, 0, 0, 0.8);
 }
 
 html, body {
@@ -35,56 +41,56 @@ html, body {
 
 main {
     display: flex;
-    gap: 0;
     height: 100vh;
     overflow: hidden;
 }
 
+/* ────────────── SIDEBAR ────────────── */
 .sidBar {
     background-color: var(--sidebar-bg);
-    color: var(--cor-secundaria--);
-    width: 260px;
-    min-width: 260px;
+    width: 250px;
+    min-width: 250px;
     height: 100vh;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    gap: 0;
+    align-items: center;
     border-right: 1px solid var(--sidebar-border);
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color: rgba(74, 222, 128, 0.2) transparent;
+    scrollbar-color: rgba(74, 222, 128, 0.12) transparent;
 }
 
-.sidBar::-webkit-scrollbar { width: 4px; }
+.sidBar::-webkit-scrollbar { width: 3px; }
 .sidBar::-webkit-scrollbar-thumb {
-    background-color: rgba(74, 222, 128, 0.2);
+    background-color: rgba(74, 222, 128, 0.12);
     border-radius: 2px;
 }
 
+/* ────────────── PRINCIPAL ────────────── */
 .principal {
     flex: 1;
     height: 100vh;
     background-color: var(--principal-bg);
     overflow-y: auto;
-    padding: 40px;
+    padding: 36px 40px;
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+    scrollbar-color: rgba(255, 255, 255, 0.06) transparent;
 }
 
-.principal::-webkit-scrollbar { width: 6px; }
+.principal::-webkit-scrollbar { width: 5px; }
 .principal::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.07);
     border-radius: 3px;
 }
 
+/* ────────────── CARD ────────────── */
 .conteudo {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 16px;
-    padding: 32px;
-    margin-bottom: 24px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 22px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -93,35 +99,45 @@ main {
 
 .conteudo h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 600;
     color: var(--text-primary);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    padding-bottom: 16px;
+    border-bottom: 1px solid var(--divider);
+    padding-bottom: 14px;
+    letter-spacing: 0.01em;
 }
 
 .conteudo h2 {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     color: var(--accent);
+    letter-spacing: 0.03em;
 }
 
+/* ────────────── TITULOINFOS ────────────── */
+.tituloInfos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ────────────── LABELS E INPUTS GENÉRICOS ────────────── */
 .conteudo label.addTitulo {
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
 }
 
 .conteudo input.addTitulo {
     background: var(--input-bg);
     border: 1px solid var(--input-border);
     border-radius: 8px;
-    padding: 10px 14px;
+    padding: 9px 13px;
     color: var(--text-primary);
     font-family: 'Inter', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%;
@@ -130,18 +146,23 @@ main {
 
 .conteudo input.addTitulo:focus {
     border-color: var(--input-focus);
-    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.06);
 }
 
+.conteudo input.addTitulo::placeholder { color: var(--text-muted); }
+
+/* ────────────── BOTÕES GENÉRICOS ────────────── */
 .conteudo button {
     background: var(--accent-dim);
     color: var(--accent);
-    border: 1px solid rgba(74, 222, 128, 0.25);
+    border: 1px solid var(--accent-border);
     border-radius: 8px;
     padding: 8px 18px;
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     cursor: pointer;
     transition: background 0.2s, border-color 0.2s, transform 0.1s;
     width: fit-content;
@@ -155,12 +176,215 @@ main {
 
 .conteudo button:active { transform: translateY(0); }
 
-.conteudo div > label.itemListaBusca {
-    font-size: 12px;
-    font-weight: 500;
+/* ────────────── BARRA Listas / Textarea ────────────── */
+.ladoAlado {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--divider);
+}
+
+/* ────────────── SPLIT PANEL: TEXTAREA | LISTA ────────────── */
+/* O JS cria .divTextearea e divLista (sem classe) dentro de .conteudo.
+   Quando um fica ao lado do outro, usamos grid para separá-los. */
+
+.conteudo > .divTextearea,
+.conteudo > div:not(.tituloInfos):not(.ladoAlado) {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Qualquer dois blocos de conteúdo lado a lado (textarea + lista) */
+.conteudo > .divTextearea + div:not(.tituloInfos):not(.ladoAlado),
+.conteudo > div:not(.tituloInfos):not(.ladoAlado) + .divTextearea {
+    border-left: 1px solid var(--divider);
+    padding-left: 24px;
+    margin-left: -0px;
+}
+
+/* Container wrapper que agrupa os dois lados */
+.conteudo > .divTextearea:not(:last-child),
+.conteudo > div:not(.tituloInfos):not(.ladoAlado):not(:last-child) {
+    padding-right: 24px;
+}
+
+/* Flex row para quando textarea e lista estão juntas */
+.conteudo {
+    container-type: inline-size;
+}
+
+/* Layout de dois painéis lado a lado */
+.conteudo > .divTextearea ~ div:not(.ladoAlado):not(.tituloInfos) {
+    padding-left: 20px;
+}
+
+/* ─── Wrapper automático para os painéis ─── */
+/* Quando .divTextearea existe, forçamos ela e o próximo div a ficarem
+   lado a lado via grid no próprio .conteudo */
+
+/* Hack elegante: .divTextearea + divLista ficam em linha */
+.conteudo {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.conteudo .tituloInfos    { grid-column: 1 / -1; }
+.conteudo > button        { grid-column: 1 / -1; }
+.conteudo > .ladoAlado    { grid-column: 1 / -1; }
+.conteudo > p             { grid-column: 1 / -1; }
+
+/* Os painéis de conteúdo (divTextearea e divLista) ficam lado a lado */
+.conteudo > .divTextearea {
+    grid-column: 1 / 2;
+    border-right: 1px solid var(--divider);
+    padding-right: 24px;
+}
+
+/* div genérica da lista */
+.conteudo > div:not(.tituloInfos):not(.ladoAlado):not(.divTextearea) {
+    grid-column: 2 / 3;
+    padding-left: 24px;
+}
+
+/* Se só existe uma delas, ocupa tudo */
+.conteudo > .divTextearea:only-of-type {
+    grid-column: 1 / -1;
+    border-right: none;
+    padding-right: 0;
+}
+
+/* Redefine para dois painéis quando ambos existem */
+.conteudo:has(.divTextearea) {
+    grid-template-columns: 1fr 1px 1fr;
+}
+
+.conteudo:has(.divTextearea) > .divTextearea {
+    grid-column: 1 / 2;
+    border-right: none;
+    padding-right: 24px;
+}
+
+.conteudo:has(.divTextearea) > div:not(.tituloInfos):not(.ladoAlado):not(.divTextearea) {
+    grid-column: 3 / 4;
+    padding-left: 24px;
+}
+
+/* Linha divisória central */
+.conteudo:has(.divTextearea)::after {
+    display: none; /* usamos border-right no divTextearea mesmo */
+}
+
+/* ────────────── TEXTAREA ────────────── */
+.divTextearea {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.texteareaValor {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    resize: vertical;
+    min-height: 160px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.texteareaValor:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.06);
+}
+
+.texteareaValor::placeholder { color: var(--text-muted); }
+
+.labelTituloTextearea {
+    font-size: 11px;
+    font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
+}
+
+.inputTituloTextearea {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 9px 12px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.inputTituloTextearea:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.06);
+}
+
+.inputTituloTextearea::placeholder { color: var(--text-muted); }
+
+.tituloTextearea {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+}
+
+.bntAddTituloTextearea,
+.btnTesteareaAparecer {
+    background: var(--accent-dim) !important;
+    color: var(--accent) !important;
+    border: 1px solid var(--accent-border) !important;
+    border-radius: 8px !important;
+    padding: 7px 15px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    width: fit-content !important;
+    transition: background 0.2s, border-color 0.2s !important;
+}
+
+.bntAddTituloTextearea:hover,
+.btnTesteareaAparecer:hover {
+    background: var(--accent-hover) !important;
+    border-color: rgba(74, 222, 128, 0.5) !important;
+}
+
+/* ────────────── PARÁGRAFO SALVO ────────────── */
+.conteudo p {
+    color: var(--text-dim);
+    font-size: 14px;
+    line-height: 1.7;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    white-space: pre-wrap;
+}
+
+/* ────────────── LISTA ────────────── */
+.conteudo div > label.itemListaBusca {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     display: block;
     margin-bottom: 6px;
 }
@@ -169,61 +393,36 @@ main {
     background: var(--input-bg);
     border: 1px solid var(--input-border);
     border-radius: 8px;
-    padding: 9px 12px;
+    padding: 8px 12px;
     color: var(--text-primary);
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
+    width: calc(100% - 90px);
     margin-right: 8px;
 }
 
 .conteudo div > input.itemListaBusca:focus {
     border-color: var(--input-focus);
-    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.06);
 }
 
+.conteudo div > input.itemListaBusca::placeholder { color: var(--text-muted); }
+
 .conteudo input.itemLista[type="checkbox"] {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     accent-color: var(--accent);
     cursor: pointer;
-    margin-right: 8px;
+    margin-right: 10px;
     vertical-align: middle;
+    flex-shrink: 0;
 }
 
 .conteudo span {
-    color: var(--text-primary);
-    font-size: 15px;
-    vertical-align: middle;
-}
-
-.conteudo textarea {
-    background: var(--input-bg);
-    border: 1px solid var(--input-border);
-    border-radius: 10px;
-    padding: 14px;
-    color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
+    color: var(--text-dim);
     font-size: 14px;
-    line-height: 1.6;
-    resize: vertical;
-    min-height: 120px;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    width: 100%;
-}
-
-.conteudo textarea:focus {
-    border-color: var(--input-focus);
-    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
-}
-
-.conteudo p {
-    color: var(--text-primary);
-    font-size: 15px;
-    line-height: 1.7;
-    background: var(--input-bg);
-    border-radius: 8px;
-    padding: 14px;
+    vertical-align: middle;
+    line-height: 1.5;
 }
