@@ -29,7 +29,7 @@ function addTopico(){
         principal.append(conteudo)
         inputTopico.value = ''
 
-        btnAddConteudo.addEventListener('click', () =>{
+        divTopico.addEventListener('click', () =>{
             const todosConteudos = document.querySelectorAll('.conteudo')
             todosConteudos.forEach(item => {
                 item.style.display = 'none'
