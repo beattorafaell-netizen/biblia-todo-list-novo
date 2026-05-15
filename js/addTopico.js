@@ -1,4 +1,5 @@
 import criarConteudo from "./addConteudo.js"
+import removerItem from "./removerItem.js"
 
 const inputTopico = document.querySelector('.inputTopico')
 
@@ -16,6 +17,13 @@ function addTopico(){
         const btnAddConteudo = document.createElement('button')
         btnAddConteudo.textContent = "🖊"
 
+        const btnRemoveConteudo = document.createElement('button')
+        btnRemoveConteudo.textContent = "X"
+
+        btnRemoveConteudo.addEventListener('click', () => {
+            removerItem(divTopico, conteudo)
+        })
+
         const conteudo = criarConteudo(inputTopico.value)
         conteudo.style.display = 'none'
         principal.append(conteudo)
@@ -32,6 +40,7 @@ function addTopico(){
 
         divTopico.append(topicoItem)
         divTopico.append(btnAddConteudo)
+        divTopico.append(btnRemoveConteudo)
         return divTopico
         } else {
             alert('Nao pode tipoco sem valor ')

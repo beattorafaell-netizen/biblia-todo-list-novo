@@ -426,3 +426,11 @@ main {
     vertical-align: middle;
     line-height: 1.5;
 }
+
+.divTexteareaLista {
+    display: flex;
+}
+
+.divTexteareaLista{
+    width: 50%;
+}
